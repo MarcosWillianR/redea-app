@@ -29,9 +29,10 @@ repository at the old address sends every page here, so the links in older build
 - **Plain HTML and CSS.** No framework, no build step and no JavaScript: four pages don't need them.
   `.nojekyll` makes GitHub Pages serve the files exactly as they are in the repository.
 - **No third-party requests.** DM Sans, the app's typeface, is served from here as WOFF (licence in
-  [`assets/fonts/OFL.txt`](assets/fonts/OFL.txt)), and there is no analytics or tracking, which is
-  also what the privacy policy promises about the app. A Content-Security-Policy on every page makes
-  the browser enforce it.
+  [`assets/fonts/OFL.txt`](assets/fonts/OFL.txt)), and the site has no analytics or tracking. The app
+  has no third-party analytics either: as the privacy policy says, it measures usage only through the
+  each account's event history, in totals across all accounts. A Content-Security-Policy on every page
+  makes the browser enforce the site's part.
 - **The app's own artwork.** The light rein behind the hero is adapted from the app's `ReinGlow`
   component (React Native SVG): the same curve shape, colour stops and bright core, scaled to sit
   behind the phone, under the app's grain texture.
