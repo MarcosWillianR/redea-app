@@ -38,7 +38,7 @@
 <main>
   <a class="logo" href="./index.html"><div class="mark"><img src="./redea-icon.svg" alt="" width="40" height="40"></div><strong>Rédea</strong></a>
   <h1>Política de Privacidade</h1>
-  <p class="updated">Última atualização: 4 de novembro de 2026 · vale a partir da versão 4 do app</p>
+  <p class="updated">Última atualização: 9 de novembro de 2026 · vale a partir da versão 4 do app</p>
 
   <div class="card">Resumo: a partir da versão 4, a Rédea tem conta. O que você registra fica
   guardado nela, em servidores no Brasil, para você trocar de celular sem perder nada. Seus
@@ -73,11 +73,15 @@
   <h3>O que você registra</h3>
   <ul>
     <li>Renda declarada, como você recebe e o dia do pagamento.</li>
-    <li>Lançamentos: valor, descrição, data, mês do orçamento, categoria e conta.</li>
+    <li>Lançamentos: valor, descrição, data, mês do orçamento, categoria e conta e, no pagamento da fatura de um cartão, o cartão cuja fatura ele paga.</li>
     <li>Investimentos: nome, a conta ou o banco onde estão e se foram encerrados. Eles não
     se apagam um a um: encerrados, ficam até você excluir a conta. Num lançamento, guardamos
     também se ele é aplicação, resgate ou rendimento e, quando houver, de qual investimento.</li>
     <li>Contas e cartões: nome, banco, cor e os dias de fechamento e de vencimento.</li>
+    <li>O valor de cada investimento e o saldo de cada conta, nas datas em que você informa ou
+    atualiza: à mão, pelo extrato (veja abaixo) ou, quem escolhe acompanhar o patrimônio, ao
+    começar a usar o app, com o saldo dos bancos que você escolher e informar. Cada valor guarda
+    o dia a que se refere e o dia em que foi informado.</li>
     <li>Compromissos: parcelamentos, financiamentos e contas recorrentes, com valores,
     parcelas, juros, pausas e pagamentos.</li>
     <li>Categorias, limites e o planejamento de cada mês.</li>
@@ -86,13 +90,26 @@
   <h3>Na importação de extrato (OFX)</h3>
   <p>O arquivo que você escolhe é enviado ao servidor só para ser lido, e não fica guardado.
   Ficam os lançamentos que você aceitar, o nome do arquivo, o banco e o código que o banco dá
-  a cada transação (para a mesma transação não entrar duas vezes). Quando você diz se uma
-  linha é dinheiro indo ou voltando de um investimento seu, guardamos a resposta (a descrição
-  da linha sem números e o investimento escolhido) para as próximas importações já entrarem
-  certas. Quando você responde “Agora não” a acompanhar um parcelamento, guardamos o número de
-  parcelas e o valor da parcela, para não perguntar de novo. Essas respostas ficam enquanto a
-  conta existir; desfazer uma importação logo depois de fazê-la, pelo aviso do Extrato, apaga
-  as respostas dela.</p>
+  a cada transação (para a mesma transação não entrar duas vezes).</p>
+  <p>Quando você diz se uma linha é dinheiro indo ou voltando de um investimento seu, guardamos
+  a resposta (a descrição da linha sem números e o investimento escolhido) para as próximas
+  importações já entrarem certas. Quando você responde “Agora não” a acompanhar um
+  parcelamento, guardamos o número de parcelas e o valor da parcela, para não perguntar de
+  novo.</p>
+  <p>Quando você diz que uma linha é o pagamento da fatura de um cartão seu, guardamos a
+  resposta (a descrição da linha sem números, como “pagamento de fatura”, e o cartão
+  escolhido): nas próximas importações de extrato dessa conta, a mesma descrição já entra
+  ligada a esse cartão. Se você responde “Não, conta como gasto”, guardamos só a descrição,
+  sem números, para não perguntar de novo. Só guardamos essas duas respostas quando a
+  descrição é de um pagamento de fatura: um Pix para alguém, por exemplo, não deixa resposta
+  guardada.</p>
+  <p>Se o arquivo traz o saldo da conta, a revisão mostra “Saldo da conta … · vai para o
+  Patrimônio” antes de você gravar. Quando ela diz que vai, guardamos esse saldo como o saldo
+  da conta naquele dia, junto com a importação. Quando não vai (por exemplo, o arquivo é de
+  outro banco ou a conta já tem saldo naquele dia), nada é guardado.</p>
+  <p>Todas essas respostas e o saldo ficam enquanto a conta existir e saem no “Exportar meus
+  dados”. Desfazer uma importação logo depois de fazê-la, pelo aviso do Extrato, apaga as
+  respostas dela e o saldo que ela guardou.</p>
 
   <h3>Para a segurança da conta</h3>
   <ul>
@@ -100,10 +117,12 @@
     do app e do sistema) e uma versão embaralhada (hash) da chave da sessão. Não existe
     senha: você entra pela Apple ou pelo Google.</li>
     <li>Um histórico de eventos da conta (entradas, saídas, importações, exportações, a
-    vinda dos dados da versão anterior e a criação, o encerramento e a reativação de
-    investimentos), com data, hora, contagens e poucos detalhes técnicos (como, nas entradas,
-    se foi pela Apple ou pelo Google; nos de investimento, só o identificador interno dele),
-    sem valores, nomes nem descrições. O endereço IP de cada entrada fica guardado só como
+    vinda dos dados da versão anterior, a criação, o encerramento e a reativação de
+    investimentos, a atualização dos valores do mês e a conclusão das boas-vindas do app),
+    com data, hora, contagens e poucos detalhes técnicos (como, nas entradas, se foi pela Apple
+    ou pelo Google; nos de investimento, só o identificador interno dele; na atualização dos
+    valores, só quantos valores foram guardados; na conclusão das boas-vindas, só o que você
+    escolheu acompanhar: gastos, patrimônio ou os dois), sem valores, nomes nem descrições. O endereço IP de cada entrada fica guardado só como
     hash. Esse histórico também serve, em números somados de todas as contas, para sabermos
     como o app é usado (veja <a href="#finalidades">para que usamos</a>).</li>
     <li>Se você entra com a Apple, um código de acesso que a Apple fornece, guardado
@@ -128,10 +147,15 @@
     <li>A chave da sua sessão, no armazenamento seguro do sistema (Keychain no iPhone,
     Keystore no Android).</li>
     <li>As preferências deste aparelho: o bloqueio por Face ID ou biometria, “Ocultar
-    valores”, os avisos de vencimento e a última conta usada.</li>
+    valores”, os avisos de vencimento, o lembrete mensal para atualizar os valores, a aba em
+    que o app abre (“Abrir o app em”) e a última conta usada.</li>
     <li>Os avisos de vencimento, agendados no próprio aparelho (a Rédea não envia
     notificações pelo servidor). Eles mostram o nome da conta, a data e o valor, ou
     “R$ •••” com “Ocultar valores” ligado.</li>
+    <li>O lembrete mensal para atualizar os valores, se você o ligar: um aviso agendado no
+    próprio aparelho, no dia 1, às 9h. Na tela de bloqueio ele mostra quantos valores estão
+    para atualizar e os nomes dos investimentos e das contas, nunca os valores. Com “Ocultar
+    valores” ligado, mostra só a quantidade, sem os nomes. Ao sair da conta, ele é cancelado.</li>
     <li>Os widgets do iPhone: o valor do dia, a sobra do mês e as próximas contas ficam
     gravados para o widget mostrar, e entram no backup do iPhone. Ao sair da conta, são
     apagados.</li>
@@ -159,16 +183,16 @@
   <h2 id="finalidades">Para que usamos e com que base legal</h2>
   <ul>
     <li>Para prestar o serviço que você pediu ao criar a conta: guardar e mostrar seus dados,
-    calcular a sobra, os previstos e os avisos, importar extratos e trazer os dados da versão
+    calcular a sobra, os previstos, o que você tem e os avisos, importar extratos e trazer os dados da versão
     anterior (execução de contrato, art. 7º, V, da LGPD).</li>
     <li>Para manter sua conta e o serviço seguros: entrar com a Apple ou o Google, manter as
     sessões, detectar uso indevido e investigar falhas (execução de contrato e legítimo
     interesse, art. 7º, V e IX).</li>
     <li>Para saber como o app é usado e melhorá-lo: contamos, no histórico de eventos acima,
     quantas vezes as ações registradas nele acontecem (por exemplo, quantas pessoas criaram um
-    investimento e quantas linhas do extrato foram ligadas ou não a um investimento). Olhamos só
+    investimento, quantas atualizaram os valores do mês e quantas linhas do extrato foram ligadas ou não a um investimento). Olhamos só
     os números somados de todas as contas, nunca de um grupo com menos de 5 pessoas, sem valores,
-    nomes nem descrições, e só do que aconteceu depois da publicação desta versão da política
+    nomes nem descrições, e só do que aconteceu depois de 4 de novembro de 2026, quando esta finalidade entrou na política
     (legítimo interesse, art. 7º, IX). Se não quiser que a sua conta entre nessa soma, escreva para
     <a href="mailto:markusuuuu@gmail.com">markusuuuu@gmail.com</a> a partir do e-mail da conta
     (com “Ocultar Meu E-mail” da Apple, informe o endereço de encaminhamento). Vale a qualquer
@@ -220,12 +244,17 @@
   <ul>
     <li><strong>Acessar e levar seus dados:</strong> no app, em Ajustes (toque na sua inicial,
     no alto do Início) → “Exportar meus dados”, que gera um arquivo JSON com o seu perfil e
-    tudo o que você registra. O extrato também sai em CSV. O que não vai nesse arquivo (os
+    tudo o que você registra, inclusive o valor dos investimentos e o saldo das contas. O extrato também sai em CSV. O que não vai nesse arquivo (os
     identificadores de login, as sessões e o histórico de eventos) você recebe por
     <a href="mailto:markusuuuu@gmail.com">e-mail</a>, em até 15 dias. O código de acesso da
     Apple, que é uma credencial, não é entregue.</li>
     <li><strong>Corrigir:</strong> lançamentos, compromissos, contas, categorias, investimentos
-    e renda se editam no próprio app; para corrigir nome ou e-mail, escreva para nós.</li>
+    e renda se editam no próprio app. No iPhone, o valor de cada investimento e o saldo de cada
+    conta se atualizam no app, e os já guardados se apagam do mais recente para o mais antigo (o
+    de um investimento encerrado, só depois de reativá-lo). Escreva para nós para corrigir ou
+    apagar um valor antigo sem mexer nos mais novos, um saldo negativo, o saldo de uma conta
+    encerrada ou, no Android, qualquer valor ou saldo. O mesmo vale para corrigir nome ou
+    e-mail.</li>
     <li><strong>Excluir a conta e todos os dados:</strong> no app, em Ajustes → “Excluir
     conta”. É imediato e definitivo. Sem o app, veja
     <a href="./excluir-conta.html">como pedir a exclusão</a>.</li>
