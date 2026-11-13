@@ -8,8 +8,8 @@ before each bill is due.
 
 ![The landing page: the light rein, the headline and the Início screen rising from the bottom edge](assets/og.jpg)
 
-The screens on the page come from the new version (4.0), which is in closed testing on TestFlight, and
-they show demo data. The App Store still has version 3.1.
+The screens on the page come from version 4.0, on the App Store since November 13, 2026, and they show
+demo data.
 
 ## Pages
 
@@ -74,8 +74,7 @@ Site público da **Rédea**, app de finanças pessoais para quem quer sair das d
 para gastar hoje, acompanha cada parcela até a última e avisa antes de cada conta vencer. No ar em
 https://marcoswillianr.github.io/redea-app/.
 
-- As telas da página são da nova versão, em testes fechados no TestFlight, com dados de demonstração.
-  A App Store ainda tem a versão 3.1.
+- As telas da página são da versão 4.0, na App Store desde 13/11/2026, com dados de demonstração.
 - `privacidade.html`, `excluir-conta.html` e `suporte.html` estão na ficha da App Store e no app. O
   site veio para este endereço quando o repositório foi renomeado e, como o GitHub Pages não
   redireciona, um repositório no endereço antigo manda cada página para cá: os links das versões
