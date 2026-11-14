@@ -22,7 +22,7 @@ demo data.
 
 These URLs are in the App Store listing and hard-coded in the app. The site moved here when the
 repository was renamed, and since GitHub Pages does not redirect a renamed project site, a small
-repository at the old address sends every page here, so the links in older builds keep working.
+repository at the old address sent every page here until version 4 replaced version 3 in the store.
 
 ## How it's built
 
@@ -77,8 +77,8 @@ https://marcoswillianr.github.io/redea-app/.
 - As telas da página são da versão 4.0, na App Store desde 13/11/2026, com dados de demonstração.
 - `privacidade.html`, `excluir-conta.html` e `suporte.html` estão na ficha da App Store e no app. O
   site veio para este endereço quando o repositório foi renomeado e, como o GitHub Pages não
-  redireciona, um repositório no endereço antigo manda cada página para cá: os links das versões
-  antigas do app continuam funcionando.
+  redireciona, um repositório no endereço antigo mandou cada página para cá até a versão 4 tomar o
+  lugar da 3 na loja.
 - HTML e CSS puros, sem framework nem JavaScript, e sem chamar nenhum outro endereço: a DM Sans é
   servida daqui, não há analytics, e a CSP de cada página faz o navegador garantir isso.
 - A rédea de luz do topo é o desenho do próprio app (o componente `ReinGlow`) adaptado para SVG.
